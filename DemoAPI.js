@@ -11,9 +11,39 @@ async function fetchUsers() {
 
 async function fetchUserPosts(userId = 1) {
     const response = await fetch(`https://jsonplaceholder.typicode.com/posts?userId=${userId}`);
+// Converts to json
     const posts = await response.json();
     console.log(`Posts by user ${userId}:`, posts.slice(0, 3));
 }
 
 fetchUsers();
 fetchUserPosts(1);
+
+
+//Dog Data api
+async function dogData() {
+    const data = await fetch('https://dog.ceo/api/breeds/list/all');
+    const dogTypes = await data.json();
+    console.log("Dog data: ", dogTypes);
+}
+
+dogData();
+
+// Cat Data API
+async function catData() {
+    const data = await fetch('https://api.thecatapi.com/v1/breeds');
+    const catTypes = await data.json();
+    console.log("Cat data: ", catTypes.slice(0, 3));
+}
+
+catData();
+
+// TV Show Data
+async function tvShowData() {
+    const data = await fetch('https://api.tvmaze.com/shows');
+    const tvShows = await data.json();
+    console.log("TV Show data: ", tvShows.slice(0, 5));
+}
+
+tvShowData();
+
