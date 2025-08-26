@@ -47,3 +47,20 @@ async function tvShowData() {
 
 tvShowData();
 
+// Best Countries
+async function bestCountriesData() {
+    const data = await fetch('https://restcountries.com/');
+    const countires = await data.json();
+    console.log("Best Countries data: ", countries.slice(0, 5));
+}
+
+bestCountiresData();
+
+// Jokes
+async function jokesData() {
+    const data = await fetch('https://jokeapi.dev/');
+    const jokes = await data.json();
+    console.log("Jokes data: ", jokes.slice(0, 5));
+}
+
+jokesData();
