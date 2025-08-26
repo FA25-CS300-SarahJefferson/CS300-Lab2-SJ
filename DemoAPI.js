@@ -47,14 +47,14 @@ async function tvShowData() {
 
 tvShowData();
 
-// Best Countries
+// Best Countries ---- Change link, choose different api
 async function bestCountriesData() {
     const data = await fetch('https://restcountries.com/');
-    const countires = await data.json();
+    const countries = await data.json();
     console.log("Best Countries data: ", countries.slice(0, 5));
 }
 
-bestCountiresData();
+bestCountriesData();
 
 // Jokes
 async function jokesData() {
