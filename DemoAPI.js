@@ -47,20 +47,20 @@ async function tvShowData() {
 
 tvShowData();
 
-// Best Countries ---- Change link, choose different api
-async function bestCountriesData() {
-    const data = await fetch('https://restcountries.com/');
-    const countries = await data.json();
-    console.log("Best Countries data: ", countries.slice(0, 5));
+// Trivia API
+async function triviaData() {
+    const data = await fetch('https://opentdb.com/api.php?amount=10');
+    const trivia = await data.json();
+    console.log("Trivia data: ", trivia);
 }
 
-bestCountriesData();
+triviaData();
 
-// Jokes
-async function jokesData() {
-    const data = await fetch('https://jokeapi.dev/');
-    const jokes = await data.json();
-    console.log("Jokes data: ", jokes.slice(0, 5));
+// Meals
+async function mealData() {
+    const data = await fetch('https://www.themealdb.com/api/json/v1/1/search.php?s=Arrabiata');
+    const meal = await data.json();
+    console.log("Meal data: ", meal);
 }
 
-jokesData();
+mealData();
